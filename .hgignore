@@ -3,7 +3,7 @@
 .+\.(java\~)
 syntax: glob
 ./com/phipo/PPg/Boid 
-./com/phipo/PPg/Game3d/SAV
+./com/phipo/PPg/Game3d
 ./com/phipo/PPg/GameOld
 ./com/phipo/PPg/PPgJ3d/SAV
 *~
