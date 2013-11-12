@@ -1,0 +1,7 @@
+.+\.(class)
+.+\.(java\~)
+syntax: glob
+./com/phipo/PPg/Boid 
+./com/phipo/PPg/Game3d
+./com/phipo/PPg/GameOld
+
