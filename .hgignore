@@ -2,9 +2,12 @@
 .+\.(tmp)
 .+\.(java\~)
 syntax: glob
-./com/phipo/PPg/Boid 
+./com/phipo/PPg/Boid
 ./com/phipo/PPg/Game3d
 ./com/phipo/PPg/GameOld
 ./com/phipo/PPg/PPgJ3d/SAV
+./com/phipo/PPg/PPgGame3d/SAV
 *~
-/#*/#
+\#*\#
+com/phipo/PPg/Reflexions.txt
+com/phipo/PPg/M0k4/DesktopAnim/animals.PNG
