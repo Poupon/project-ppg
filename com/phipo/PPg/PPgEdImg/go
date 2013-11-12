@@ -1,0 +1,1 @@
+java -debug -splash:com/phipo/PPg/PPgEdImg/anim.gif -cp ../../../.. com/phipo/PPg/PPgEdImg/PPgMain -h -l -c $*
