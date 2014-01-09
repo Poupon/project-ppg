@@ -49,13 +49,13 @@ import javax.swing.filechooser.*;
  *   images/tiffIcon.gif (required by ImageFileView.java)
  *   images/pngIcon.png (required by ImageFileView.java)
  */
-public class PPgFileChooserDemo2 extends JPanel
+public class FileChooserDemo2 extends JPanel
                               implements ActionListener {
     static private String newline = "\n";
     private JTextArea log;
     private JFileChooser fc;
 
-    public PPgFileChooserDemo2() {
+    public FileChooserDemo2() {
         super(new BorderLayout());
 
         //Create the log first, because the action listener

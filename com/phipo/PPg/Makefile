@@ -13,8 +13,6 @@ all::
 	cd PPgSwarm;  make ;cd ..;\
 	cd PPgTestSwarm;   make ;cd ..;\
 	cd PPgTest;   make ;cd ..;\
-	cd Boid;      make ;cd ..;\
-	cd Towers;    make ;cd ..;\
 
 
 
@@ -45,7 +43,7 @@ T1m3::
 
 
 install::
-	cp PPgLib.jar  /home/team02/phipo/DEV/JavaUtils/JGame/src
+	cp PPgLib.jar  ~/DEV/JavaUtils/JGame/src
 
 
 clean::

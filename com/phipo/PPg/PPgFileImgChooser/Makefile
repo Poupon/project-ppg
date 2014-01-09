@@ -1,8 +1,8 @@
-all:: PPgFileChooserDemo2.class PPgImageFilter.class PPgImageUtils.class PPgImageFileView.class PPgImagePreview.class
+all:: FileChooserDemo2.class PPgImageFilter.class PPgImageUtils.class PPgImageFileView.class PPgImagePreview.class
 
 
 
-clean::
+clean::mv 
 	rm *.class 
 
 %.class: %.java
