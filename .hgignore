@@ -1,6 +1,8 @@
 .+\.(class)
 .+\.(tmp)
 .+\.(java\~)
+.+\.(jar)
+.+\.(zip)
 syntax: glob
 ./com/phipo/PPg/Boid
 ./com/phipo/PPg/Game3d
