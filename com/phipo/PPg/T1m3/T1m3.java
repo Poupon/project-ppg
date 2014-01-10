@@ -77,7 +77,7 @@ public class T1m3 extends JDialog
 		public static Dimension sDimension  = new Dimension( 250, 50 );
 		public static boolean sAlwaysOnTop = false;
 		
-		static public char sIndicAlarm = 'Â°';
+		static public char sIndicAlarm = '°';
 		static public HashSet<String> sAlarm = new HashSet<>();
 		static String sFilePref = "T1m3.ini";
 		

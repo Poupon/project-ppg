@@ -249,7 +249,7 @@ public class PPgVector extends Point2D.Double {
         
 	//----------------------------------
     public String toString() {
-        return "" + x + "," + y + ":" + Math.toDegrees( cDirection ) +'°';
+        return "" + x + "," + y + ":" + Math.toDegrees( cDirection ) +'d';
     }
 
 	//----------------------------------
