@@ -391,8 +391,9 @@ public class PPgJ3d  extends World3d {
 
 						cKamera.resetOrtho(null);
 
-						World3d.sTheWorld.setKamera(  new ActorLocation( 0.5f, 0.5f, -0.5f, EnumFaction.Neutral, cKamera ));
-						
+						//	World3d.sTheWorld.setKamera(  new ActorLocation( 0.5f, 0.5f, -0.5f, EnumFaction.Neutral, cKamera ));
+						World3d.sTheWorld.setKamera(  new ActorLocation( 1f, 1f, -1f, EnumFaction.Neutral, cKamera ));
+
 						World3d.sTheWorld.getUserControl().initFromKamera( cKamera );
 
 						//		cKam.getTransf().rotate( new Float3( 30f, 30f, 0f ) );
@@ -467,9 +468,9 @@ public class PPgJ3d  extends World3d {
 		@Override
 				public void worldCallEndSceneDraw(GL2 pGl) {
 
-				System.out.println( "PPJ3d.worldCallEndSceneDraw" 
-														+ " Actors:" + World3d.sTheWorld.getActorLocation().size()
-														+ " CompilOBj:" + CompilObj.sNbCompilObjectInUse );
+		    //	System.out.println( "PPJ3d.worldCallEndSceneDraw" 
+		    //			+ " Actors:" + World3d.sTheWorld.getActorLocation().size()
+														    //												+ " CompilOBj:" + CompilObj.sNbCompilObjectInUse );
 				/*
 				if( DefaultUserControl3d.sTrace != null ){
 						cTextRender.beginRendering( Engine.sTheGlDrawable.getWidth(), Engine.sTheGlDrawable.getHeight());
@@ -530,13 +531,14 @@ public class PPgJ3d  extends World3d {
 				World3d.sDebugFps = PPgParam.GetBoolean( args, "-f", false);
 				PPgJ3d.sFlagXY = PPgParam.GetBoolean( args, "-XY", false);
 
-				boolean lSmooth = PPgParam.GetBoolean( args, "-s", false);
+				boolean lSmooth = PPgParam.GetBoolean( args, "-t", false);
 				PPgJ3d.sViewGrid3d = PPgParam.GetBoolean( args, "-g", true);
 				PPgJ3d.sViewRepere = PPgParam.GetBoolean( args, "-r", true);
 
-				PPgJ3d.sGenSize = PPgParam.GetFloat( args, "-S", PPgJ3d.sGenSize);
+				PPgJ3d.sGenSize = PPgParam.GetFloat( args, "-s", PPgJ3d.sGenSize);
+				System.out.println("Size:" +  PPgJ3d.sGenSize );
 
-				//PB sur la taille de World et le rebond
+				//Pb sur la taille de World et le rebond
 				//	PB sur la vitesse : tous a gauche !
 				
 				Engine lEngine = new Engine( "Test JOGL",  lW, lH,  lStrFullScreen != null, lSmooth  );

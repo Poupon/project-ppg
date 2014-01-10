@@ -17,6 +17,8 @@ import com.jogamp.opengl.util.awt.TextRenderer;
 import java.awt.Font;
 import java.text.DecimalFormat;
 
+import com.jogamp.newt.event.MouseAdapter;
+
 import javax.media.nativewindow.util.Point;
 
 
@@ -89,22 +91,22 @@ public class DefaultUserControl3d extends UserControl3d{
 				Trace();
 		}
 		//------------------------------------------------
-		@Override public void keyTyped(KeyEvent e) {
+		@Override public void keyPressed(KeyEvent e) {
 				
 				int lKeyCode    = e.getKeyCode();
 				char lKey       = e.getKeyChar();
 				boolean lAction = e.isActionKey();
 
-			System.out.println( "keyTyped " + lKeyCode + " " + lKey + " "+ lAction );
+			System.out.println( "DefaultUserControl3d.key:" + lKeyCode + " " + lKey + " "+ lAction );
 
-				if ( lKeyCode == KeyEvent.VK_Q) {
+				if ( lKeyCode == KeyEvent.VK_Q  ) {
 							System.exit(0);
-				} else    	if ( lKeyCode == KeyEvent.VK_P) {
+				} else    	if ( lKeyCode == KeyEvent.VK_P|| lKey == 'p') {
 						World3d.sTheWorld.FlipPause();
 				}
 				
 
-				if (lKeyCode == KeyEvent.VK_LEFT)
+				if (lKeyCode == KeyEvent.VK_LEFT )
 						cRotY -= 0.5f;
 				
 				if (lKeyCode == KeyEvent.VK_RIGHT)
@@ -116,12 +118,31 @@ public class DefaultUserControl3d extends UserControl3d{
 				if (lKeyCode == KeyEvent.VK_DOWN)
 						cRotX += 0.5f;
 
-
-				if (lKeyCode == KeyEvent.VK_MINUS)
+				if (lKeyCode == KeyEvent.VK_PAGE_DOWN)
 						cRotZ -= 0.5;
 
-				if (lKeyCode == KeyEvent.VK_ADD)
+				if (lKeyCode == KeyEvent.VK_PAGE_UP)
 						cRotZ += 0.5;
+
+				if (lKeyCode == KeyEvent.VK_SUBTRACT
+				    || lKeyCode == KeyEvent.VK_DIVIDE){
+
+				    float dW = -1;
+				    cScale += 50.0f*dW*cDelta*0.01*cScale;
+				    if( cScale > 100 )
+					cScale = 100;
+				    else if( cScale < 0.001f )
+					cScale =  0.001f;
+				}  
+				if (lKeyCode == KeyEvent.VK_ADD
+				    || lKeyCode == KeyEvent.VK_MULTIPLY){
+				    float dW = 1;
+				    cScale += 50.0f*dW*cDelta*0.01*cScale;
+				    if( cScale > 100 )
+					cScale = 100;
+				    else if( cScale < 0.001f )
+					cScale =  0.001f;
+				}
 
 					if ( lKeyCode == KeyEvent.VK_I) {
 							World3d.sTheWorld.getCurrentKamera().resetOrtho(null);
@@ -280,21 +301,24 @@ public class DefaultUserControl3d extends UserControl3d{
 				
 		}
 		//------------------------------------------------
-		@Override public void 	mouseWheelMoved(MouseEvent e)  {
+		@Override public void 	mouseWheelMoved( MouseEvent e)  {
 
-				int dW = e.getWheelRotation();
-
+		    //  int dW = e.getWheelRotation();
+		    
 				//////			System.out.println( "Wheel:" + dW );
-				
-				cScale += 50.0f*dW*cDelta*0.01*cScale;
-				
-				if( cScale > 100 )
-						cScale = 100;
-				else if( cScale < 0.001f )
-						cScale =  0.001f;
+					    
+		    float lRot[] = e.getRotation();
+		    float dW = lRot[0] + lRot[1] + lRot[2];
 
-
-				setView();
+		    cScale += 50.0f*dW*cDelta*0.01*cScale;
+		    
+		    if( cScale > 100 )
+			cScale = 100;
+		    else if( cScale < 0.001f )
+			cScale =  0.001f;
+		    
+		    
+		    setView();
 
 		}
 		//------------------------------------------------

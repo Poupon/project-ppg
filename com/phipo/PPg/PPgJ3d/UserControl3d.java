@@ -11,6 +11,7 @@ import javax.media.opengl.*;
 import javax.media.opengl.glu.*;
 
 import com.jogamp.opengl.util .*;
+//import java.awt.event.*;
 import com.jogamp.newt.event.*;
 import com.jogamp.newt.opengl.GLWindow;
 
@@ -29,9 +30,9 @@ abstract public class UserControl3d
 
 
 		//------------------------------------------------
-		public void keyPressed(KeyEvent e) {;}
-		public void keyReleased(KeyEvent e){;}
-		public void keyTyped(KeyEvent e) {;}
+    public void keyPressed(KeyEvent e) {System.out.println("keyPresses");}
+		public void keyReleased(KeyEvent e){System.out.println("keyReleased");}
+		public void keyTyped(KeyEvent e) {System.out.println("keyTyped");}
 		
 		public void 	mouseClicked(MouseEvent e) {;}	
 		public void 	mouseDragged(MouseEvent e) {;}		

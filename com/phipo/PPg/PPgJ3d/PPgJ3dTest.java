@@ -37,14 +37,14 @@ public class PPgJ3dTest  extends DefaultUserControl3d {
 		}
 		//------------------------------------------------
 		@Override 
-				public void keyTyped(KeyEvent e) {
-				
-				
+				public void keyPressed(KeyEvent e) {
+			       
+
 				int lKeyCode    = e.getKeyCode();
 				char lKey       = e.getKeyChar();
 				boolean lAction = e.isActionKey();
 
-				System.out.println( "keyTyped " + lKeyCode + " " + lKey + " "+ lAction );
+				System.out.println( "PPgJ3dTest.key " + lKeyCode + " " + lKey + " "+ lAction );
 
 		//		if( e.isModifierKey() ){
 	//					return; 
@@ -90,7 +90,7 @@ public class PPgJ3dTest  extends DefaultUserControl3d {
 				}   if ( lKeyCode == KeyEvent.VK_R) {
 						System.out.println( "Repere");
 						cDemo.setViewRepere();
-				} else super.keyTyped( e );
+				} else super.keyPressed( e );
 		}
 }
 //*************************************************

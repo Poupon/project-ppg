@@ -11,20 +11,19 @@ public class PPgParam {
 				
 				if( args == null )	return pDefault;
 
-				int l = p_prefix.length();
+				int lSz = p_prefix.length();
 				//				System.out.println( "");
 				//				System.out.println( "GetString : " +  args.length + " : " + p_prefix  );
 
-				for( int i=0; i<  args.length; i++){
-						
+				for( int i=0; i<  args.length; ++i){
 						String arg = args[i];
 
 						//						System.out.print( " | " + arg );
 						
 						if( arg.startsWith( p_prefix ))
 								{
-										args[i] = "";
-										return arg.substring( l );
+								     args[i] = "";
+								     return arg.substring( lSz );
 								}
 				}
 				return pDefault;
@@ -120,14 +119,16 @@ public class PPgParam {
 		}		
 		//---------------------------------
 		public static float GetFloat( String[] args, String p_prefix, float pDefault){
-				
+
 				if( args == null )	return pDefault;
 
 				String lVar = GetString( args, p_prefix, null );
-				
+
+
 				if( lVar != null ){
 						
 						try{
+
 								return Float.parseFloat( lVar );
 						}catch(NumberFormatException ex){
 								System.err.println( "Mauvais format pour commande "+p_prefix);
