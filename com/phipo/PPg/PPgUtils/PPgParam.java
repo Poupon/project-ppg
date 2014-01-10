@@ -118,6 +118,23 @@ public class PPgParam {
 				}
 				return pDefault;
 		}		
+		//---------------------------------
+		public static float GetFloat( String[] args, String p_prefix, float pDefault){
+				
+				if( args == null )	return pDefault;
+
+				String lVar = GetString( args, p_prefix, null );
+				
+				if( lVar != null ){
+						
+						try{
+								return Float.parseFloat( lVar );
+						}catch(NumberFormatException ex){
+								System.err.println( "Mauvais format pour commande "+p_prefix);
+						}										
+				}
+				return pDefault;
+		}		
 }
 
 //*************************************************

@@ -16,4 +16,5 @@ JOGAMP_JAR
 :${JOGAMP_PATH}/jar/*natives-linux-i586.jar\
 
 echo java -debug -cp ../../../..:${JOGAMP_JAR}  com/phipo/PPg/PPgJ3d/PPgJ3d 
-java  -debug -cp ../../../..:${JOGAMP_JAR}  com/phipo/PPg/PPgJ3d/PPgJ3d -F30 -f -XY
+# java  -debug -cp ../../../..:${JOGAMP_JAR}  com/phipo/PPg/PPgJ3d/PPgJ3d -F30 -f -XY
+java  -debug -cp ../../../..:${JOGAMP_JAR}  com/phipo/PPg/PPgJ3d/PPgJ3d -F30 -S0.3

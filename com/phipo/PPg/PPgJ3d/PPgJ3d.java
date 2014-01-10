@@ -47,12 +47,27 @@ public class PPgJ3d  extends World3d {
 		boolean cFlagDemo2 = false;
 
 		static boolean sFlagXY = false;
+		static boolean sViewGrid3d = true;
+
+		static boolean sViewRepere = true;
+		static float sGenSize=1f;
+
 
 		TextRenderer cTextRender;
 		TextRenderer cTextRender2;
 	//------------------------------------------------
+		void setViewGrid(){
+				sViewGrid3d = ! sViewGrid3d;
+		}
+	//------------------------------------------------
+		void setViewRepere(){
+				sViewRepere = ! sViewRepere;
+		}
+	//------------------------------------------------
 		public  PPgJ3d( DimFloat3 pWorldBox, Engine pEngine, boolean pSmooth ){
 				super( pWorldBox, pEngine );
+
+				
 				
 				//				getGLWindow().addKeyListener( this );
 							//				getGLWindow().addMouseListener( this );
@@ -116,6 +131,8 @@ public class PPgJ3d  extends World3d {
 		//------------------------------------------------
 		public void createDemoSprites( int pNb, boolean lCentralPoint, float lSize, int lDepth, Primitiv3d.SubNormalizeType  pNormalize ){
 
+				lSize *= sGenSize;
+				
 				if( pNormalize != Primitiv3d.SubNormalizeType.NORMALIZE_INC_INIT )
 						lSize *=2;
 				else
@@ -418,11 +435,16 @@ public class PPgJ3d  extends World3d {
 
 
 				 //	Primitiv3d.Green( pGl );
-				Primitiv3d.DrawGridXZ(  pGl, getWidth()/2, getDepth()/2, 3 );
-				Primitiv3d.DrawGridXY(  pGl, getWidth()/2, getHeight()/2, 3 );
-				Primitiv3d.DrawGridYZ(  pGl, getHeight()/2, getDepth()/2, 3 );
+				 if( sViewGrid3d ) {
+						 Primitiv3d.DrawGridXZ(  pGl, getWidth()/2, getDepth()/2, 3 );
+						 Primitiv3d.DrawGridXY(  pGl, getWidth()/2, getHeight()/2, 3 );
+						 Primitiv3d.DrawGridYZ(  pGl, getHeight()/2, getDepth()/2, 3 );
+				 }
 
-				Primitiv3d.DrawRepere(  pGl, 0.5f, true );	
+				 if( sViewRepere ) {
+						 Primitiv3d.DrawRepere(  pGl, 1f, true );	
+				 }
+
 
 				
 				pGl.glDisable(GL2.GL_LIGHTING);
@@ -509,7 +531,10 @@ public class PPgJ3d  extends World3d {
 				PPgJ3d.sFlagXY = PPgParam.GetBoolean( args, "-XY", false);
 
 				boolean lSmooth = PPgParam.GetBoolean( args, "-s", false);
-				
+				PPgJ3d.sViewGrid3d = PPgParam.GetBoolean( args, "-g", true);
+				PPgJ3d.sViewRepere = PPgParam.GetBoolean( args, "-r", true);
+
+				PPgJ3d.sGenSize = PPgParam.GetFloat( args, "-S", PPgJ3d.sGenSize);
 
 				//PB sur la taille de World et le rebond
 				//	PB sur la vitesse : tous a gauche !

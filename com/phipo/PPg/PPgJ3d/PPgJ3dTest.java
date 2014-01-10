@@ -84,8 +84,13 @@ public class PPgJ3dTest  extends DefaultUserControl3d {
 
 					for( ActorBase lActor: cDemo.cDemoActor )
 							lActor.setDeleted();
-				}
-				else super.keyTyped( e );
+				}	else  if ( lKeyCode == KeyEvent.VK_G) {
+						System.out.println( "Grid");
+						cDemo.setViewGrid();
+				}   if ( lKeyCode == KeyEvent.VK_R) {
+						System.out.println( "Repere");
+						cDemo.setViewRepere();
+				} else super.keyTyped( e );
 		}
 }
 //*************************************************
