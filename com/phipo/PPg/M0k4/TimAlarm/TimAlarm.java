@@ -72,7 +72,7 @@ public class TimAlarm extends M0k4_Gadget
 		
 		// Alarm & Carillon
 		public boolean sUseSecond = false;
-		public char             sIndicAlarm = '°';
+		public char             sIndicAlarm = '#';
 		public HashSet<String> sAlarm = new HashSet<>();
 		
 		public boolean  sFlagCarillonHeure = false;

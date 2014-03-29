@@ -22,7 +22,7 @@ public class MyTrayIcon extends PPgTrayIcon {
 
 
 		MyTrayIcon( String pNameIcon ){
-				super( pNameIcon );
+				super( pNameIcon, "T1m3" );
 		}
 
 		//------------------------------------------------
