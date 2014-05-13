@@ -30,24 +30,23 @@ abstract public class UserControl3d
 
 
 		//------------------------------------------------
-    public void keyPressed(KeyEvent e) {System.out.println("keyPresses");}
-		public void keyReleased(KeyEvent e){System.out.println("keyReleased");}
-		public void keyTyped(KeyEvent e) {System.out.println("keyTyped");}
+    @Override  public void keyPressed(KeyEvent e) {System.out.println("keyPresses");}
+		@Override  public void keyReleased(KeyEvent e){System.out.println("keyReleased");}
 		
-		public void 	mouseClicked(MouseEvent e) {;}	
-		public void 	mouseDragged(MouseEvent e) {;}		
-		public void 	mouseEntered(MouseEvent e) {;}		
-		public void 	mouseExited(MouseEvent e) {;}		
+		@Override  public void 	mouseClicked(MouseEvent e) {;}	
+		@Override public void 	mouseDragged(MouseEvent e) {;}		
+		@Override public void 	mouseEntered(MouseEvent e) {;}		
+		@Override public void 	mouseExited(MouseEvent e) {;}		
 
-		public void 	mousePressed(MouseEvent e) {;	}		
+		@Override public void 	mousePressed(MouseEvent e) {;	}		
 		//------------------------------------------------
 
-		public void 	mouseMoved(MouseEvent e) {
+		@Override public void 	mouseMoved(MouseEvent e) {
 				System.out.println( "UserControl3d.mouseMoved" );
 		}		
 		//------------------------------------------------
-		public void 	mouseReleased(MouseEvent e) {;}		
+		@Override public void 	mouseReleased(MouseEvent e) {;}		
 
 		//------------------------------------------------
-		public void 	mouseWheelMoved(MouseEvent e)  {;}
+		@Override public void 	mouseWheelMoved(MouseEvent e)  {;}
 };

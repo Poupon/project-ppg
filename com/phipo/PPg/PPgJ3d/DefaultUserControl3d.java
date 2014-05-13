@@ -99,9 +99,9 @@ public class DefaultUserControl3d extends UserControl3d{
 
 			System.out.println( "DefaultUserControl3d.key:" + lKeyCode + " " + lKey + " "+ lAction );
 
-				if ( lKeyCode == KeyEvent.VK_Q  ) {
+				if ( lKey == 'Q' || lKey == 'q'  ) {
 							System.exit(0);
-				} else    	if ( lKeyCode == KeyEvent.VK_P|| lKey == 'p') {
+				} else    	if ( lKey == 'P' || lKey == 'p') {
 						World3d.sTheWorld.FlipPause();
 				}
 				
@@ -144,7 +144,7 @@ public class DefaultUserControl3d extends UserControl3d{
 					cScale =  0.001f;
 				}
 
-					if ( lKeyCode == KeyEvent.VK_I) {
+					if ( lKey == 'I' || lKey == 'i' ) {
 							World3d.sTheWorld.getCurrentKamera().resetOrtho(null);
 							//				World3d.sTheWorld.getCurrentKamera().setOrtho( null, -0.5f, 0.5f, -0.5f, 0.5f, -0.5f, 0.5f);
 							cRotX =-90f;
@@ -153,7 +153,7 @@ public class DefaultUserControl3d extends UserControl3d{
 							cKamX = cKamY = 0f;
 							cScale = 2f;
 					}
-					if (lKeyCode == KeyEvent.VK_O) {
+					if (lKey == 'O' || lKey == 'o' ) {
 							World3d.sTheWorld.getCurrentKamera().setOrtho( null, -5f, 5f, -5f, 5f, -5f, 5f);
 							World3d.sTheWorld.getCurrentKamera().getTransf().scale( new Float3( 1f, 1f, 1f ) );
 							cRotX =-45f;
@@ -163,7 +163,7 @@ public class DefaultUserControl3d extends UserControl3d{
 							cScale = 0.1f;
 					}
 
-					if (lKeyCode == KeyEvent.VK_U) {
+					if (lKey == 'U' || lKey == 'u') {
 							if( World3d.sTheWorld.getCurrentKamera().isOrtho() ) {
 									System.out.println( " ********************** PERPECTIVE " );
 									World3d.sTheWorld.getCurrentKamera().setPerspective( null, cEye, cCenter, cUp );

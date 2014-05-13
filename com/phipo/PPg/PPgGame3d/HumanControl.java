@@ -47,12 +47,12 @@ public class HumanControl  extends DefaultUserControl3d {
 		}
 		//------------------------------------------------
 		@Override 
-				public void keyTyped(KeyEvent e) {
+				public void keyPressed(KeyEvent e) {
 				
 				if( cActorGamer == null )
 						return ;
 
-				super.keyTyped( e );
+				super.keyPressed( e );
 		}
 		//------------------------------------------------
 		//------------------------------------------------
